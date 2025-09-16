@@ -1,5 +1,4 @@
-# Assignment 1 
-## CIS 5120 (FA25)
+# Assignment 1 - CIS 5120 (FA25)
 Dev Patel
 
 This assignment requires me to write HTML code for a revamped version of the courses.upenn.edu homepage. 
