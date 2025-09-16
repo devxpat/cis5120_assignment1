@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Penn Courses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img class="home-image" src="/assets/pennlogo.png " width="70"/>
+                </div>
+                <h1>Penn Courses</h1>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Classes Section -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="section-header">
+                        <div class="section-indicator"></div>
+                        <h2 class="section-title">Search Classes</h2>
+                    </div>
+
+                    <!-- Semester Dropdown -->
+                    <div class="select-container">
+                        <select class="select">
+                            <option value="fall2025">FALL 2025</option>
+                            <option value="spring2025">SPRING 2025</option>
+                            <option value="summer2025">SUMMER 2025</option>
+                        </select>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="input-container">
+                        <input type="text" class="input" placeholder="Title, Keyword, Instructor, Subj.">
+                        <svg class="input-icon icon" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </div>
+
+                    <!-- Advanced Filters Button -->
+                    <button class="btn btn-outline btn-full btn-sm" style="margin-bottom: 12px;">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24">
+                            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"/>
+                        </svg>
+                        Advanced Filters
+                    </button>
+
+                    <!-- Recent Filters -->
+                    <div class="recent-filters">
+                        <div class="recent-filters-title">Recent Filters</div>
+                        <div class="filter-tags scrollbar-hide">
+                            <span class="filter-tag">CIS</span>
+                            <span class="filter-tag">MW</span>
+                            <span class="filter-tag">Morning</span>
+                            <span class="filter-tag">0.5 CU</span>
+                            <span class="filter-tag">Writing Req</span>
+                            <span class="filter-tag">200 Level</span>
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button class="btn btn-primary btn-full" onclick="showSearchResults()">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        SEARCH
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="btn btn-ghost btn-sm">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24">
+                        <circle cx="8" cy="21" r="1"/>
+                        <circle cx="19" cy="21" r="1"/>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                    </svg>
+                    View Cart
+                </button>
+                <button class="btn btn-ghost btn-sm">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                        <line x1="16" x2="16" y1="2" y2="6"/>
+                        <line x1="8" x2="8" y1="2" y2="6"/>
+                        <line x1="3" x2="21" y1="10" y2="10"/>
+                    </svg>
+                    Schedule
+                </button>
+            </div>
+
+            <!-- Explore Section -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="section-header">
+                        <div class="section-indicator"></div>
+                        <h3 class="section-title">Explore</h3>
+                    </div>
+
+                    <div class="explore-grid">
+                        <div class="explore-card">
+                            <svg class="explore-icon icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="10" r="1"/>
+                                <path d="m14 20.5v-5a2 2 0 0 0-4 0v5"/>
+                                <path d="M9 21h6"/>
+                                <path d="M15 5a7 7 0 1 1-6 10.64L7.5 14"/>
+                                <path d="m12 11 2-2v6"/>
+                            </svg>
+                            <span>Degree Audit</span>
+                        </div>
+                        <div class="explore-card">
+                            <svg class="explore-icon icon" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" x2="8" y1="13" y2="13"/>
+                                <line x1="16" x2="8" y1="17" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                            <span>Programs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="section-header">
+                        <div class="section-indicator"></div>
+                        <h3 class="section-title">Resources</h3>
+                    </div>
+
+                    <div class="resource-list">
+                        <div class="resource-item blue">
+                            <div class="resource-icon-container">
+                                <svg class="resource-icon icon" viewBox="0 0 24 24">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" x2="8" y1="13" y2="13"/>
+                                    <line x1="16" x2="8" y1="17" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                            </div>
+                            <span class="resource-title">Penn Course Review</span>
+                        </div>
+
+                        <div class="resource-item orange">
+                            <div class="resource-icon-container">
+                                <svg class="resource-icon icon" viewBox="0 0 24 24">
+                                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                                    <path d="m13.73 21a2 2 0 0 1-3.46 0"/>
+                                </svg>
+                            </div>
+                            <span class="resource-title">Penn Course Alert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showSearchResults() {
+            alert('Search functionality would be implemented here!');
+        }
+
+        // Add click handlers for interactive elements
+        document.querySelectorAll('.filter-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.style.background = tag.style.background === '#1e3a8a' ? '#1e40af' : '#1e3a8a';
+            });
+        });
+
+        document.querySelectorAll('.explore-card, .resource-item').forEach(item => {
+            item.addEventListener('click', () => {
+                console.log('Clicked:', item.textContent.trim());
+            });
+        });
+    </script>
+</body>
+</html>
